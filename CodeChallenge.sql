@@ -95,7 +95,7 @@ FROM
 	       ,FirstName
 	       ,LastName
 	       ,ExternalID
-	FROM [maintable_YQZDX]
+	FROM [maintable]
 ) z )
 SELECT  e.GroupID
        ,c.FirstName
@@ -126,7 +126,7 @@ FROM
 	(
 		SELECT  ROW_NUMBER() over(order by(select(null))) AS v_id
 		       ,*
-		FROM [maintable_YQZDX]
+		FROM [maintable]
 	) b
 	ON a.GroupID = b.GroupID
 	GROUP BY  b.FirstName
